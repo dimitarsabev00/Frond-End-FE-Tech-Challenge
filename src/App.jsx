@@ -1,8 +1,7 @@
 import "./App.css";
-import Auth from "./components/Auth";
 
 function App() {
-  return <Auth />;
+  return <div>test</div>;
 }
 
 export default App;
