@@ -7,15 +7,14 @@ const Posts = () => {
       .then((response) => response.json())
       .then((json) => setPosts(json));
   }, []);
-  console.log(posts);
   return (
-    <div className="posts">
+    <div>
       {posts.map((post) => {
         return (
-          <>
-            <h1>{post.title}</h1>
+          <div className="posts">
+            <h4>{post.title}</h4>
             <p>{post.body} </p>
-          </>
+          </div>
         );
       })}
     </div>
