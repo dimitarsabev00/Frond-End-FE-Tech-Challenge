@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./components/NavBar";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
