@@ -1,11 +1,36 @@
 import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 
-const AddUser = ({ addUsers }) => {
+const AddUser = ({ setUsers }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-
+  const addUsers = (name, email, username) => {
+    fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        username: username,
+      }),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    })
+      .then((res) => {
+        if (res.status !== 201) {
+          return;
+        } else {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        setUsers((users) => [...users, data]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     addUsers(name, email, username);
