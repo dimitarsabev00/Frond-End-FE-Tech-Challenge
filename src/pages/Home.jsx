@@ -1,8 +1,12 @@
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 
 const Home = () => {
-  return <Typography>Welcome To Home Page</Typography>;
+  return (
+    <Container sx={{ marginTop: "2rem" }}>
+      <Typography variant="h5">Welcome To Home Page</Typography>
+    </Container>
+  );
 };
 
 export default Home;
