@@ -26,7 +26,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RssFeedIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
