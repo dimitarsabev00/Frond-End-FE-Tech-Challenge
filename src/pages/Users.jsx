@@ -13,7 +13,9 @@ import AddUser from "../components/AddUser";
 const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(
+      "https://my-json-server.typicode.com/dimitarsabev00/Frond-End-FE-Tech-Challenge/users"
+    )
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }, []);
@@ -28,7 +30,6 @@ const Users = () => {
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
-              <TableCell>Username</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -40,7 +41,6 @@ const Users = () => {
                 <TableCell>{user.id}</TableCell>
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
-                <TableCell>{user.username}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -4,14 +4,12 @@ import { useState } from "react";
 const AddUser = ({ setUsers }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const addUsers = (name, email, username) => {
+  const addUsers = (name, email) => {
     fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       body: JSON.stringify({
         name: name,
         email: email,
-        username: username,
       }),
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -33,10 +31,9 @@ const AddUser = ({ setUsers }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUsers(name, email, username);
+    addUsers(name, email);
     setName("");
     setEmail("");
-    setUsername("");
   };
   return (
     <Box sx={{ margin: "2rem" }}>
@@ -68,16 +65,6 @@ const AddUser = ({ setUsers }) => {
           name="email"
           onChange={(e) => {
             setEmail(e.target.value);
-          }}
-        />
-        <TextField
-          variant="outlined"
-          label="Username"
-          placeholder="Username"
-          name="username"
-          type="text"
-          onChange={(e) => {
-            setUsername(e.target.value);
           }}
         />
 

@@ -11,7 +11,9 @@ import AddPost from "../components/AddPost";
 const Posts = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch(
+      "https://my-json-server.typicode.com/dimitarsabev00/Frond-End-FE-Tech-Challenge/posts"
+    )
       .then((response) => response.json())
       .then((json) => setPosts(json));
   }, []);
@@ -38,7 +40,7 @@ const Posts = () => {
                     {post.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {post.body}
+                    {post.description}
                   </Typography>
                 </CardContent>
               </CardActionArea>

@@ -3,13 +3,13 @@ import { useState } from "react";
 
 const AddPost = ({ setPosts }) => {
   const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const addUsers = (title, body) => {
+  const [description, setDescription] = useState("");
+  const addUsers = (title, description) => {
     fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       body: JSON.stringify({
         title: title,
-        body: body,
+        description: description,
       }),
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -31,9 +31,9 @@ const AddPost = ({ setPosts }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUsers(title, body);
+    addUsers(title, description);
     setTitle("");
-    setBody("");
+    setDescription("");
   };
   return (
     <Box sx={{ margin: "2rem" }}>
@@ -59,12 +59,12 @@ const AddPost = ({ setPosts }) => {
         />
         <TextField
           variant="outlined"
-          label="Discription"
-          placeholder="Discription"
-          name="body"
+          label="Description"
+          placeholder="Description"
+          name="description"
           type="text"
           onChange={(e) => {
-            setBody(e.target.value);
+            setDescription(e.target.value);
           }}
         />
 
