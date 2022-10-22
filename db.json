@@ -2,29 +2,30 @@
   "posts": [
     {
       "id": 1,
-      "title": "Post 1",
-      "description": "this is description 1"
+      "title": "Design Patterns",
+      "description": "Design Patterns Design patterns are a toolkit of solutions to common problems in software design. They define a common language that helps your team communicate more efficiently. They can be categorized by their intent and divided into three groups."
     },
     {
       "id": 2,
-      "title": "Post 2",
-      "description": "this is description 2"
-    },
-    {
-      "id": 3,
-      "title": "Post 3",
-      "description": "this is description 3"
+      "title": "Lazy Loading in images with React JS 😴",
+      "description": "Lazy Loading in images with React JS is very important nowadays to improve the performance of your website. Performing image optimization helps your website to be faster, have better SEO and improve user experience. This time you will learn how to lazy load images in an application with React [...Array.from(Array(items).keys) The solution is to implement lazy loading. With this, the 15 images would appear downwards."
     }
   ],
   "users": [
     {
-      "email": "test@abv.bg"
+      "id": 1,
+      "name": "Dimitar Sabev",
+      "email": "dimitar@abv.bg"
     },
     {
-      "email": "test2@abv.bg"
+      "id": 2,
+      "name": "Elena Sabev",
+      "email": "elena@abv.bg"
     },
     {
-      "email": "test3@abv.bg"
+      "id": 3,
+      "name": "Plamen Sabev",
+      "email": "plamen@abv.bg"
     }
   ]
 }
