@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "description": "this is description 1"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "description": "this is description 2"
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "description": "this is description 3"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@abv.bg"
+    },
+    {
+      "email": "test2@abv.bg"
+    },
+    {
+      "email": "test3@abv.bg"
+    }
+  ]
+}
