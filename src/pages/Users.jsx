@@ -8,6 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import AddUser from "../components/AddUser";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -17,9 +18,10 @@ const Users = () => {
       .then((json) => setUsers(json));
   }, []);
   console.log(users);
+
   return (
     <>
-      <TableContainer component={Paper} sx={{ marginTop: "5rem" }}>
+      <TableContainer component={Paper} sx={{ marginTop: "3rem" }}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -27,10 +29,6 @@ const Users = () => {
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Username</TableCell>
-              <TableCell>Company</TableCell>
-              <TableCell>City</TableCell>
-              <TableCell>Phone</TableCell>
-              <TableCell>Website</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -43,15 +41,12 @@ const Users = () => {
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.username}</TableCell>
-                <TableCell>{user.company.name}</TableCell>
-                <TableCell>{user.address.city}</TableCell>
-                <TableCell>{user.phone}</TableCell>
-                <TableCell>{user.website}</TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <AddUser setUsers={setUsers} />
     </>
   );
 };
