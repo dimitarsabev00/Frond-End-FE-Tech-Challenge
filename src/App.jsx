@@ -1,15 +1,20 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Posts from "./components/Posts";
-import Users from "./components/Users";
+import Posts from "./pages/Posts";
+import Users from "./pages/Users";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="container">
+    <Router>
       <NavBar />
-      <Posts />
-      <Users />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </Router>
   );
 }
 
