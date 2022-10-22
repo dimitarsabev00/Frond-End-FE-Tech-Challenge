@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -7,19 +8,17 @@ const Users = () => {
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }, []);
-  console.log(users);
   return (
     <>
-      <div className="users">
-        <h2>Users:</h2>
+      <Box>
         {users.map((user) => {
           return (
             <>
-              <div>{user.name}</div>
+              <Typography variant="h6"> Email: {user.email}</Typography>
             </>
           );
         })}
-      </div>
+      </Box>
     </>
   );
 };

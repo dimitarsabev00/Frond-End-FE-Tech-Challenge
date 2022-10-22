@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -8,16 +9,16 @@ const Posts = () => {
       .then((json) => setPosts(json));
   }, []);
   return (
-    <div>
+    <Box>
       {posts.map((post) => {
         return (
-          <div className="posts">
-            <h4>{post.title}</h4>
-            <p>{post.body} </p>
-          </div>
+          <Box sx={{ marginTop: "1rem" }}>
+            <Typography variant="h5">{post.title}</Typography>
+            <Typography>{post.body} </Typography>
+          </Box>
         );
       })}
-    </div>
+    </Box>
   );
 };
 
