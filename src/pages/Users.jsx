@@ -9,25 +9,31 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AddUser from "../components/AddUser";
+import Pages from "../components/Pages";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [userPerPage, setUserPerPage] = useState(5);
   useEffect(() => {
     fetch(
       "https://my-json-server.typicode.com/dimitarsabev00/Frond-End-FE-Tech-Challenge/users"
+      // "https://jsonplaceholder.typicode.com/users"
     )
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }, []);
-  console.log(users);
-
+  const lastUserIndex = currentPage * userPerPage;
+  const firstPostIndex = lastUserIndex - userPerPage;
+  const currentUsers = users.slice(firstPostIndex, lastUserIndex);
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+      >
         <TextField
-          sx={{ width: "40rem", marginTop: "1rem" }}
+          sx={{ width: "40rem" }}
           placeholder="Search.. "
           onChange={(e) => {
             setSearchTerm(e.target.value);
@@ -44,7 +50,7 @@ const Users = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users
+            {currentUsers
               .filter((user) => {
                 if (searchTerm == "") {
                   return user;
@@ -68,6 +74,11 @@ const Users = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <Pages
+        total={users.length}
+        itemPerPage={userPerPage}
+        setCurrentPage={setCurrentPage}
+      />
       <AddUser setUsers={setUsers} />
     </>
   );

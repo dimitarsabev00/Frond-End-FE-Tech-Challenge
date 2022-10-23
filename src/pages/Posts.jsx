@@ -8,22 +8,30 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import AddPost from "../components/AddPost";
+import Pages from "../components/Pages";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(9);
   useEffect(() => {
     fetch(
       "https://my-json-server.typicode.com/dimitarsabev00/Frond-End-FE-Tech-Challenge/posts"
+      // "https://jsonplaceholder.typicode.com/posts"
     )
       .then((response) => response.json())
       .then((json) => setPosts(json));
   }, []);
-  console.log(posts);
+
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
   return (
     <>
-      <AddPost setPosts={setPosts} />
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+      >
         <TextField
           sx={{ width: "40rem" }}
           placeholder="Search.. "
@@ -39,10 +47,9 @@ const Posts = () => {
           flexWrap: "wrap",
           gap: "3.5rem",
           marginTop: "1.5rem",
-          paddingBottom: "4rem",
         }}
       >
-        {posts
+        {currentPosts
           .filter((post) => {
             if (searchTerm == "") {
               return post;
@@ -69,6 +76,12 @@ const Posts = () => {
             );
           })}
       </Box>
+      <Pages
+        total={posts.length}
+        itemPerPage={postPerPage}
+        setCurrentPage={setCurrentPage}
+      />
+      <AddPost setPosts={setPosts} />
     </>
   );
 };
