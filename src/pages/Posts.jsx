@@ -8,11 +8,12 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import AddPost from "../components/AddPost";
+import Loading from "../components/Loading";
 import Pages from "../components/Pages";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(9);
@@ -25,8 +26,13 @@ const Posts = () => {
       .then((json) => {
         const result = json.sort((a, b) => a.title.localeCompare(b.title));
         setPosts(result);
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
