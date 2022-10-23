@@ -12,6 +12,7 @@ import Pages from "../components/Pages";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(9);
@@ -21,7 +22,10 @@ const Posts = () => {
       // "https://jsonplaceholder.typicode.com/posts"
     )
       .then((response) => response.json())
-      .then((json) => setPosts(json));
+      .then((json) => {
+        const result = json.sort((a, b) => a.title.localeCompare(b.title));
+        setPosts(result);
+      });
   }, []);
 
   const lastPostIndex = currentPage * postPerPage;
@@ -50,6 +54,7 @@ const Posts = () => {
         }}
       >
         {currentPosts
+          .sort((a, b) => a.title.localeCompare(b.title))
           .filter((post) => {
             if (searchTerm == "") {
               return post;
