@@ -3,8 +3,8 @@ import React from "react";
 
 const Home = () => {
   return (
-    <Container sx={{ marginTop: "2rem" }}>
-      <Typography variant="h5">Welcome To Home Page</Typography>
+    <Container sx={{ marginTop: "2rem", textAlign: "center" }}>
+      <Typography variant="h5">{`Welcome To My Project :) `} </Typography>
     </Container>
   );
 };
