@@ -9,6 +9,51 @@
       "id": 2,
       "title": "Lazy Loading in images with React JS 😴",
       "description": "Lazy Loading in images with React JS is very important nowadays to improve the performance of your website. Performing image optimization helps your website to be faster, have better SEO and improve user experience. This time you will learn how to lazy load images in an application with React [...Array.from(Array(items).keys) The solution is to implement lazy loading. With this, the 15 images would appear downwards."
+    },
+    {
+      "id": 3,
+      "title": "The Programming Language(s) of the Future",
+      "description": "C, C++, and Rust are not that easy, they force you to think about object lifetimes, dynamic allocations, etc. But even just in 3 categories, there are lots of differences and blurry decisions. If we consider the ease of use, and power of the implemented structures, the results will get more blurry. Until now, what have we learned? We compared the languages."
+    },
+    {
+      "id": 4,
+      "title": "HTML Reference",
+      "description": "HTML Reference is free and always will be! Please whitelist us in your ad blocker. Learn by example: HTMLreference.io is a free guide to HTML. It features all elements and attributes."
+    },
+    {
+      "id": 5,
+      "title": "How to Fetch API Data in React Like a Pro",
+      "description": "How to Fetch API Data in React Like a Pro Building applications the user use love is not an easy task. The technique we are going to talk about is known as render as you fetch. This simple technique is also suggested by React itself while fetching data."
+    },
+    {
+      "id": 6,
+      "title": "What is CORS?",
+      "description": "Cross-Origin Resource Sharing (CORS) is an HTTP-based security mechanism controlled and enforced by the client. It allows a service to indicate any origin other than its own from which the client can request resources. A request may be blocked by CORS policy not only because of the incorrect origin, but also incorrect HTTP header, HTTP method or Cookie header. How to fix CORS error?"
+    },
+    {
+      "id": 7,
+      "title": "Node.js 19 is now available!",
+      "description": "We are excited to announce that Node.js 19 was released today! Highlights include the update of the V8 JavaScript engine to 10.7, and HTTP(s)/1.1 KeepAlive enabled by default. Node.js 19 will replace Node.js 18 as our Current release line when Node.js 18 enters long-term support (LTS) later this month. As per the release schedule, Node.js 19 will be the Current' release for the next 6 months, until April 2023."
+    },
+    {
+      "id": 8,
+      "title": "Learn this before React",
+      "description": "In this article we will explore top fundamental Javascript concepts necessary to know in order to have an effective first learning cycle of React / React Native"
+    },
+    {
+      "id": 9,
+      "title": "There’s no better time for zero trust",
+      "description": "Cisco is taking a different approach to zero trust — one that removes friction for the user. The term is more of a concept than a technology, and so many vendors struggle with the best way to implement it. For zero trust to be truly effective, it must do four things: Establish trust for users, devices and applications. Enforce trust-based access based on the principle of least privilege."
+    },
+    {
+      "id": 10,
+      "title": "DDOS my School Website? 🤯",
+      "description": "The main motive of this attack is to overwhelm the devices, services, and network of its intended target with fake internet traffic, rendering them inaccessible to or useless for legitimate users. Many of the symptoms are similar to what technology users encounter every day, including slow upload or download performance speeds."
+    },
+    {
+      "id": 11,
+      "title": "How to write a good README",
+      "description": "README file is as indispensable for an open source project as it is the quality of the code. README files are plain text files because most of the source code hostings such as Github, GitLab or Azure Repos support the Markdown format. Using around 3 to 5 lines is a good rule of thumb. Each paragraph should have only one concept."
     }
   ],
   "users": [
